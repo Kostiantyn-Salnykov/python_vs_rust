@@ -1,0 +1,123 @@
+site_name: "Python VS Rust"
+site_description: "Documentation and examples that compares code blocks for Python and Rust."
+site_author: "Kostiantyn Salnykov"
+site_dir: "docs_build"
+site_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"  # logo link
+dev_addr: "localhost:9999"  # local server `HOST:PORT`
+repo_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"
+repo_name: "Kostiantyn-Salnykov/python_vs_rust"  # name of Git repository
+edit_uri: ""  # disable `edit` button
+remote_branch: "main"  # gh-deploy branch name
+copyright: "Copyright &copy; 2022 python_vs_rust - All rights reserved."  # Footer at bottom
+index_page: "../README.md"
+
+
+theme:
+  name: "material"
+#  logo: ""
+#  favicon: ""
+  language: "en"
+  locale: "en"
+  palette:
+    - scheme: "default"
+      primary: "black"
+      accent: "green"
+      toggle:
+        icon: "material/weather-night"
+        name: "Switch to dark mode"
+    - scheme: "slate"
+      primary: "black"
+      accent: "green"
+      toggle:
+        icon: "material/weather-sunny"
+        name: "Switch to light mode"
+  font:
+    text: "Robot"
+    code: "Roboto Mono"
+  features:
+    - navigation.indexes  # remove navigation duplicates (for tabs)
+#    - navigation.top
+#    - navigation.tabs.sticky
+#    - navigation.tabs
+#    - toc.integrate  # move navigation to the left
+    - navigation.sections
+    - navigation.expand
+    - navigation.instant
+    - search.suggest
+    - search.share
+    - search.highlight
+    - content.tabs.link
+
+nav:
+  - Main 🏡: index.md
+  - First Steps 👣: src/first_steps/first_steps.md
+  - Hello World 🌍!: src/hello_world/hello_world.md
+  - Data Types 🗄: src/types/types.md
+
+plugins:
+  - search:
+      min_search_length: 2
+      lang:
+        - "en"
+        - "uk"
+  - macros:
+      verbose: true
+      on_error_fail: true
+      include_dir: "docs"
+
+markdown_extensions:
+  - tables
+  - footnotes  # Ability to set hyperlink to bottom of page (as in Wikipedia)
+  - pymdownx.tabbed  # Ability to create switchable tabs
+  - pymdownx.caret  # Ability to create power by using caret ^, e.g.: H^2^O (chemical formula)
+  - pymdownx.mark  # Mark text (highlight), e.g.: ==text==
+  - pymdownx.tilde  # Text markers, e.g.: ~~deleted~~ OR ~sub text~
+  # Add symbols, e.g.:(tm)=>™; (c)=>©; (r)=>®; c/o=>℅; +/-=>±; --> => →; <-- => ←; <--> => ↔; =/= => ≠; 1/4 => ¼ etc.; 1st 2nd etc.
+  - pymdownx.smartsymbols
+  - pymdownx.magiclink  # Make clickable links | emails
+  # === Admonitions support
+  # TYPEs: note, abstract, summary, tldr, info, tip, hind, important, success, check, done, question, help, faq,
+  # warning, caution, attention, failure, fail, missing, danger, error, bug, example, quote, cite, todo
+  - admonition  # e.g.: !!! <TYPE>
+  - pymdownx.details  # ??? <TYPE>  (clickable admonition - accordion)
+  - pymdownx.keys  # Ability to write keys, e.g.: ++ctrl+alt+delete++
+  # ===
+  - pymdownx.extra
+  - abbr  # Ability to use abbreviations, e.g.: *[HTML]: Hyper Text Markup Language
+  - attr_list  # Ability to set HTML & CSS attributes
+  - meta  # Add <meta> tags to HTML
+  - toc:  # Table of contents - right sidebar
+      title: "On this page"
+      permalink: ⚓  # change icon of anchor link
+      permalink_title: "Anchor link to this section for reference"  # Tooltip message
+      toc_depth: 4  # number of depth for `table of contents`
+  - def_list  # add extra symbols for define lists: `-`; `*`; `+`
+  - pymdownx.tasklist:  # Ability to add tasks lists with `- [x] This is checked`; `- [ ] This is not checked`
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true  # Enable horizontal tabs, e.g.: ===
+  - pymdownx.highlight:
+      linenums: true  # chow line numbers inside code
+      guess_lang: true  # determines language automatically
+      anchor_linenums: true
+      line_anchors: true
+      linenums_style: table
+  - pymdownx.inlinehilite  # Ability to insert code line that highlighted for specified language, e.g. `#!py3 <CODE>` or `:::py3 <CODE>`
+  - pymdownx.snippets:
+      base_path: [ ".", "docs/src/" ]
+      check_paths: true
+      auto_append:
+        - "docs/common/abbreviations.md"  # File for all abbreviations
+  - pymdownx.superfences:  # Ability to set HTML & CSS attributes inside code blocks
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra:
+  py: "🐍"
+  rs: "🦀"
+  pyt: "Python"
+  rst: "Rust"
+  python: "Python 🐍"
+  rust: "Rust 🦀"
+  button: '{target="_blank" .md-button .md-button--secondary}'

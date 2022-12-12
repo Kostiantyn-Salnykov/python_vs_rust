@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-vs-rust"
+version = "0.0.1"
+description = "Documentation and examples that compares code blocks for Python and Rust."
+authors = ["Kostiantyn Salnykov <kostiantyn.salnykov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_vs_rust"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs-material = "^8.5.11"
+pymdown-extensions = "^9.9"
+mkdocs-macros-plugin = "^0.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

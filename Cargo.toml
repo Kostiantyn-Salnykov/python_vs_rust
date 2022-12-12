@@ -1,0 +1,17 @@
+[package]
+name = "python_vs_rust"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "hello_world"
+path = "docs/src/hello_world/hello_world.rs"
+
+[[bin]]
+name = "boolean"
+path = "docs/src/types/boolean/bool.rs"
+
