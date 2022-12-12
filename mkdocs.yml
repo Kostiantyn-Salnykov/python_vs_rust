@@ -102,6 +102,8 @@ markdown_extensions:
       anchor_linenums: true
       line_anchors: true
       linenums_style: table
+      pygments_style: "monokai"
+      noclasses: True
   - pymdownx.inlinehilite  # Ability to insert code line that highlighted for specified language, e.g. `#!py3 <CODE>` or `:::py3 <CODE>`
   - pymdownx.snippets:
       base_path: [ ".", "docs/src/" ]

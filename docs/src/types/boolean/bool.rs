@@ -1,5 +1,6 @@
 fn main() {
-    let (x, y) = (true, false);
+    let x = true;
+    let y = false;
 
     println!("x={}, y={}", x, y);
 }
