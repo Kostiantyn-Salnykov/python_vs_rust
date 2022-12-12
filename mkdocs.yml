@@ -7,7 +7,7 @@ dev_addr: "localhost:9999"  # local server `HOST:PORT`
 repo_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"
 repo_name: "Kostiantyn-Salnykov/python_vs_rust"  # name of Git repository
 edit_uri: ""  # disable `edit` button
-remote_branch: "main"  # gh-deploy branch name
+remote_branch: "docs"  # gh-deploy branch name
 copyright: "Copyright &copy; 2022 python_vs_rust - All rights reserved."  # Footer at bottom
 index_page: "../README.md"
 
