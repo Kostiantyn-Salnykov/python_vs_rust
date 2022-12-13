@@ -1,4 +1,4 @@
-# Hello World 🌍!
+# Hello World 🌍
 
 ## {{python}}
 To create standard developers program "Hello World 🌍!" with {{python}} follow this steps:

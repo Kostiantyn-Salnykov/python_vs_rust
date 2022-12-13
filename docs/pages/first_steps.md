@@ -1,5 +1,7 @@
 # First Steps 👣
 
+In this section described basic steps to start programming with Python or Rust.
+
 ## {{python}}
 
 ### Installation 🔌
@@ -57,7 +59,7 @@ To install {{rst}} it's better to use the official method via `rustup` (this is 
 
     1. Go to [Rustup](https://rustup.rs/#){{button}};
     2. Click "display all supported installers";
-    3. Select x32 or x64 bit version of `rustup-init.exe`;
+    3. Select **x32** or **x64** bit version of `rustup-init.exe`;
     4. Install it;
 === "Unix (MacOS, Linux)"
 

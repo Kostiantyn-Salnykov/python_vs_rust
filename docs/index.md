@@ -2,7 +2,7 @@
 
 ## {{python}} VS {{rust}}
 
-This is not a challenge or benchmark comparisons, this a simple documentation, that might be helpful for 
+This is not a challenge or benchmark comparison, this a simple documentation, that might be helpful for 
 Python Software Engineers that want to learn Rust.
 
 ## Description 📑

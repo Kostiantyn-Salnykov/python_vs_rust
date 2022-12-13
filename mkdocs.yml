@@ -51,7 +51,7 @@ theme:
 nav:
   - Main 🏡: index.md
   - First Steps 👣: pages/first_steps.md
-  - Hello World 🌍!: pages/hello_world.md
+  - Hello World 🌍: pages/hello_world.md
   - Printing 🖨 & Formatting 📝: pages/printing.md
   - Data Types 🗄: pages/types.md
 
