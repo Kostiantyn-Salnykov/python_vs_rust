@@ -1,0 +1,894 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and examples that compares code blocks for Python and Rust.">
+      
+      
+        <meta name="author" content="Kostiantyn Salnykov">
+      
+      
+        <link rel="canonical" href="https://github.com/Kostiantyn-Salnykov/python_vs_rust/pages/types/">
+      
+      <link rel="icon" href="../../images/rust.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>Data Types 🗄 - Python🐍 VS Rust🦀</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Robot:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Robot";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python🐍 VS Rust🦀" class="md-header__button md-logo" aria-label="Python🐍 VS Rust🦀" data-md-component="logo">
+      
+  <img src="../../images/rust.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python🐍 VS Rust🦀
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Types 🗄
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Kostiantyn-Salnykov/python_vs_rust" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kostiantyn-Salnykov/python_vs_rust
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python🐍 VS Rust🦀" class="md-nav__button md-logo" aria-label="Python🐍 VS Rust🦀" data-md-component="logo">
+      
+  <img src="../../images/rust.svg" alt="logo">
+
+    </a>
+    Python🐍 VS Rust🦀
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Kostiantyn-Salnykov/python_vs_rust" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kostiantyn-Salnykov/python_vs_rust
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Main 🏡
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first_steps/" class="md-nav__link">
+        First Steps 👣
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hello_world/" class="md-nav__link">
+        Hello World 🌍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../printing/" class="md-nav__link">
+        Printing 🖨 & Formatting 📝
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Types 🗄
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Types 🗄
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#association-types-table" class="md-nav__link">
+    Association Types Table 📖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python 🐍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust" class="md-nav__link">
+    Rust 🦀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#association-types-table" class="md-nav__link">
+    Association Types Table 📖
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python 🐍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust" class="md-nav__link">
+    Rust 🦀
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="data-types">Data Types 🗄<a class="headerlink" href="#data-types" title="Anchor link to this section for reference">⚓</a></h1>
+<h2 id="association-types-table">Association Types Table 📖<a class="headerlink" href="#association-types-table" title="Anchor link to this section for reference">⚓</a></h2>
+<p>This is roughly parallel table for types between Python 🐍 and Rust 🦀.</p>
+<table>
+<thead>
+<tr>
+<th>Python 🐍</th>
+<th>Rust 🦀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool (<code class="highlight"><span style="color: #66d9ef">True</span></code> or <code class="highlight"><span style="color: #66d9ef">False</span></code>)</td>
+<td>bool (<code class="highlight"><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"></span></code> or <code class="highlight"><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"></span></code>)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>i8, i16, i32, i64, i128, isize,<br/> u8, u16, u32, u64, u128, usize</td>
+</tr>
+<tr>
+<td>float</td>
+<td>f32, f64</td>
+</tr>
+<tr>
+<td>array.array</td>
+<td>array</td>
+</tr>
+<tr>
+<td>str / bytes (<strong>rough</strong>)</td>
+<td>char</td>
+</tr>
+<tr>
+<td>str / bytes (<strong>rough</strong>)</td>
+<td>str</td>
+</tr>
+<tr>
+<td>str (<code class="highlight"><span style="color: #e6db74">&quot;&quot;</span></code> or <code class="highlight"><span style="color: #f8f8f2">str()</span></code>)</td>
+<td>String (<code class="highlight"><span style="color: #f8f8f2">String</span>::<span style="color: #f8f8f2">new()</span></code>)</td>
+</tr>
+<tr>
+<td>bytes (<code class="highlight"><span style="color: #e6db74">b&quot;&quot;</span></code>)</td>
+<td>str.as_bytes()</td>
+</tr>
+<tr>
+<td>tuple (<code class="highlight"><span style="color: #f8f8f2">()</span></code> or <code class="highlight"><span style="color: #f8f8f2">tuple()</span></code>)</td>
+<td>tuple (<code class="highlight"><span style="color: #f8f8f2">();</span></code>)</td>
+</tr>
+<tr>
+<td>ellipsis (<code class="highlight"><span style="color: #f92672">...</span></code>) / NoneType (<code class="highlight"><span style="color: #66d9ef">None</span></code>)</td>
+<td>unit (<code class="highlight"><span style="color: #f8f8f2">()</span></code>)</td>
+</tr>
+<tr>
+<td>list (<code class="highlight"><span style="color: #f8f8f2">[]</span></code> or <code class="highlight"><span style="color: #f8f8f2">list()</span></code>)</td>
+<td>collections.Vec (<code class="highlight"><span style="color: #f8f8f2">Vec</span>::<span style="color: #f8f8f2">new()</span></code> or <code class="highlight"><span style="color: #a6e22e">vec!</span><span style="color: #f8f8f2">[]</span></code>)</td>
+</tr>
+<tr>
+<td>dict (<code class="highlight"><span style="color: #f8f8f2">{}</span></code> or <code class="highlight"><span style="color: #f8f8f2">dict()</span></code>)</td>
+<td>collections.HashMap, collections.BTreeMap</td>
+</tr>
+<tr>
+<td>set (<code class="highlight"><span style="color: #f8f8f2">set()</span></code>)</td>
+<td>collections.HashSet, collections.BTreeSet</td>
+</tr>
+<tr>
+<td>collections.deque(<code class="highlight"><span style="color: #f8f8f2">deque()</span></code>)</td>
+<td>collections.VecDeque (<code class="highlight"><span style="color: #f8f8f2">VecDeque</span>::<span style="color: #f8f8f2">new()</span></code>)</td>
+</tr>
+<tr>
+<td>enum.Enum</td>
+<td>enum</td>
+</tr>
+<tr>
+<td>NoneType (<code class="highlight"><span style="color: #66d9ef">None</span></code>)</td>
+<td>enum Option&lt;T&gt;</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td>enum Result&lt;T, E&gt;</td>
+</tr>
+<tr>
+<td>generator</td>
+<td>slice (<strong>rough</strong>)</td>
+</tr>
+<tr>
+<td>function, lambda</td>
+<td>fn</td>
+</tr>
+<tr>
+<td>range (<code class="highlight"><span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">)</span></code>)</td>
+<td>Range (<code class="highlight"><span style="color: #f92672">..</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2"></span></code>)</td>
+</tr>
+<tr>
+<td>decimal.Decimal</td>
+<td></td>
+</tr>
+<tr>
+<td>fractions.Fraction</td>
+<td></td>
+</tr>
+<tr>
+<td>pathlib.Path</td>
+<td>path.Path</td>
+</tr>
+<tr>
+<td>class / dataclass</td>
+<td>struct (<strong>rough</strong>)</td>
+</tr>
+<tr>
+<td>abc.ABC / <code class="highlight"><span style="color: #f8f8f2">@abstractmethod</span></code></td>
+<td>trait</td>
+</tr>
+<tr>
+<td>datetime.datetime</td>
+<td></td>
+</tr>
+<tr>
+<td>datetime.time</td>
+<td></td>
+</tr>
+<tr>
+<td>datetime.timedelta</td>
+<td>time.Duration (<strong>rough</strong>)</td>
+</tr>
+<tr>
+<td></td>
+<td>Box&lt;T&gt; (<code class="highlight"><span style="color: #f8f8f2">Box</span>::<span style="color: #f8f8f2">new()</span></code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Anchor link to this section for reference">⚓</a></h2>
+<h3 id="python">Python 🐍<a class="headerlink" href="#python" title="Anchor link to this section for reference">⚓</a></h3>
+<p><a class="md-button md-button--secondary" href="https://docs.python.org/3/library/stdtypes.html#boolean-values" target="_blank">Docs</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In Python Boolean (bool) type are subclass from Integer (int).
+So keep it in mind 🤯.</p>
+<p>Roughly <code class="highlight"><span style="color: #66d9ef">True</span></code> is equal to <code class="highlight"><span style="color: #ae81ff">1</span></code> and <code class="highlight"><span style="color: #66d9ef">False</span></code> is equal to <code class="highlight"><span style="color: #ae81ff">0</span></code>. </p>
+<div class="admonition example">
+<p class="admonition-title">bool values True / False rougly equavivalent to int values 1 / 0</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><a id="True-0-1" name="True-0-1" href="#True-0-1"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #66d9ef">True</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">1</span>
+<a id="True-0-2" name="True-0-2" href="#True-0-2"></a><span style="color: #66d9ef">True</span>
+<a id="True-0-3" name="True-0-3" href="#True-0-3"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #66d9ef">False</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span>
+<a id="True-0-4" name="True-0-4" href="#True-0-4"></a><span style="color: #66d9ef">True</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">bool type actually instance of int type</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><a id="True-1-1" name="True-1-1" href="#True-1-1"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">issubclass(bool,</span> <span style="color: #f8f8f2">int)</span>
+<a id="True-1-2" name="True-1-2" href="#True-1-2"></a><span style="color: #66d9ef">True</span>
+</code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">All bool values actually instance of int type</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><a id="True-2-1" name="True-2-1" href="#True-2-1"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">isinstance(bool(),</span> <span style="color: #f8f8f2">int)</span>
+<a id="True-2-2" name="True-2-2" href="#True-2-2"></a><span style="color: #66d9ef">True</span>
+<a id="True-2-3" name="True-2-3" href="#True-2-3"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">isinstance(</span><span style="color: #66d9ef">True</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">int)</span>
+<a id="True-2-4" name="True-2-4" href="#True-2-4"></a><span style="color: #66d9ef">True</span>
+<a id="True-2-5" name="True-2-5" href="#True-2-5"></a><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f8f8f2">isinstance(</span><span style="color: #66d9ef">False</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">int)</span>
+<a id="True-2-6" name="True-2-6" href="#True-2-6"></a><span style="color: #66d9ef">True</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="rust">Rust 🦀<a class="headerlink" href="#rust" title="Anchor link to this section for reference">⚓</a></h3>
+<p><a class="md-button md-button--secondary" href="https://doc.rust-lang.org/std/primitive.bool.html" target="_blank">Docs</a></p>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Anchor link to this section for reference">⚓</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python 🐍</label><label for="__tabbed_1_2">Rust 🦀</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-3-1">1</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-3-2">2</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-3-3">3</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-3-4">4</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-3-5">5</a></span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><a id="True-3-1" name="True-3-1"></a><span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;__main__&quot;</span><span style="color: #f8f8f2">:</span>
+<a id="True-3-2" name="True-3-2"></a>    <span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">True</span>
+<a id="True-3-3" name="True-3-3"></a>    <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">False</span>
+<a id="True-3-4" name="True-3-4"></a>
+<a id="True-3-5" name="True-3-5"></a>    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">f&quot;{</span><span style="color: #f8f8f2">x</span><span style="color: #e6db74">=}, {</span><span style="color: #f8f8f2">y</span><span style="color: #e6db74">=}&quot;</span><span style="color: #f8f8f2">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #272822"><span class="filename">Output</span><pre style="line-height: 125%;"><span></span><code><a id="True-4-1" name="True-4-1" href="#True-4-1"></a>x=True, y=False
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-1">1</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-2">2</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-3">3</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-4">4</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-5">5</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-5-6">6</a></span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><a id="True-5-1" name="True-5-1"></a><span style="color: #66d9ef">fn</span> <span style="color: #a6e22e">main</span><span style="color: #f8f8f2">() {</span>
+<a id="True-5-2" name="True-5-2"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">let</span><span style="color: #f8f8f2"> x </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2">;</span>
+<a id="True-5-3" name="True-5-3"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">let</span><span style="color: #f8f8f2"> y </span><span style="color: #f92672">=</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2">;</span>
+<a id="True-5-4" name="True-5-4"></a>
+<a id="True-5-5" name="True-5-5"></a><span style="color: #f8f8f2">    </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;x={}, y={}&quot;</span><span style="color: #f8f8f2">, x, y);</span>
+<a id="True-5-6" name="True-5-6"></a><span style="color: #f8f8f2">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #272822"><span class="filename">Output</span><pre style="line-height: 125%;"><span></span><code><a id="True-6-1" name="True-6-1" href="#True-6-1"></a>x=true, y=false
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python 🐍</label><label for="__tabbed_2_2">Rust 🦀</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-1"> 1</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-2"> 2</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-3"> 3</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-4"> 4</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-5"> 5</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-6"> 6</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-7"> 7</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-8"> 8</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-9"> 9</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-10">10</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-11">11</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-12">12</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-13">13</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-14">14</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-15">15</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-16">16</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-17">17</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-18">18</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-19">19</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-20">20</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-21">21</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-22">22</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-23">23</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-24">24</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-25">25</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-26">26</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-27">27</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-28">28</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-29">29</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-7-30">30</a></span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><a id="True-7-1" name="True-7-1"></a><span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&quot;__main__&quot;</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-2" name="True-7-2"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-3" name="True-7-3"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if True&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># always works code</span>
+<a id="True-7-4" name="True-7-4"></a>
+<a id="True-7-5" name="True-7-5"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-6" name="True-7-6"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># unreachable code</span>
+<a id="True-7-7" name="True-7-7"></a>
+<a id="True-7-8" name="True-7-8"></a>    <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #66d9ef">True</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-9" name="True-7-9"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if not True&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># unreachable code</span>
+<a id="True-7-10" name="True-7-10"></a>
+<a id="True-7-11" name="True-7-11"></a>    <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-12" name="True-7-12"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if not False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># always works code</span>
+<a id="True-7-13" name="True-7-13"></a>
+<a id="True-7-14" name="True-7-14"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #f92672">&amp;</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-15" name="True-7-15"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if True &amp; False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># unreachable code</span>
+<a id="True-7-16" name="True-7-16"></a>
+<a id="True-7-17" name="True-7-17"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #f92672">&amp;</span> <span style="color: #66d9ef">True</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-18" name="True-7-18"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if True &amp; True&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># always works code</span>
+<a id="True-7-19" name="True-7-19"></a>
+<a id="True-7-20" name="True-7-20"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">False</span> <span style="color: #f92672">&amp;</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-21" name="True-7-21"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if False &amp; False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># unreachable code</span>
+<a id="True-7-22" name="True-7-22"></a>
+<a id="True-7-23" name="True-7-23"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-24" name="True-7-24"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if True | False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># always works code</span>
+<a id="True-7-25" name="True-7-25"></a>
+<a id="True-7-26" name="True-7-26"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">True</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">True</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-27" name="True-7-27"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if True | True&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># always works code</span>
+<a id="True-7-28" name="True-7-28"></a>
+<a id="True-7-29" name="True-7-29"></a>    <span style="color: #66d9ef">if</span> <span style="color: #66d9ef">False</span> <span style="color: #f92672">|</span> <span style="color: #66d9ef">False</span><span style="color: #f8f8f2">:</span>
+<a id="True-7-30" name="True-7-30"></a>        <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;if False | False&quot;</span><span style="color: #f8f8f2">)</span>  <span style="color: #75715e"># unreachable code</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #272822"><span class="filename">Output</span><pre style="line-height: 125%;"><span></span><code><a id="True-8-1" name="True-8-1" href="#True-8-1"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> True</span>
+<a id="True-8-2" name="True-8-2" href="#True-8-2"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> not False</span>
+<a id="True-8-3" name="True-8-3" href="#True-8-3"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> True </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2"> True</span>
+<a id="True-8-4" name="True-8-4" href="#True-8-4"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> True </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> False</span>
+<a id="True-8-5" name="True-8-5" href="#True-8-5"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> True </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> True</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-1"> 1</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-2"> 2</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-3"> 3</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-4"> 4</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-5"> 5</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-6"> 6</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-7"> 7</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-8"> 8</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-9"> 9</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-10">10</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-11">11</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-12">12</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-13">13</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-14">14</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-15">15</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-16">16</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-17">17</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-18">18</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-19">19</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-20">20</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-21">21</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-22">22</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-23">23</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-24">24</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-25">25</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-26">26</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-27">27</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-28">28</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-29">29</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-30">30</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-31">31</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-32">32</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-33">33</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-34">34</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-35">35</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-36">36</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-37">37</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-38">38</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-39">39</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-40">40</a></span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"><a href="#True-9-41">41</a></span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><a id="True-9-1" name="True-9-1"></a><span style="color: #66d9ef">fn</span> <span style="color: #a6e22e">main</span><span style="color: #f8f8f2">() {</span>
+<a id="True-9-2" name="True-9-2"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-3" name="True-9-3"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if true&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// always works code</span>
+<a id="True-9-4" name="True-9-4"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-5" name="True-9-5"></a>
+<a id="True-9-6" name="True-9-6"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-7" name="True-9-7"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// unreachable code</span>
+<a id="True-9-8" name="True-9-8"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-9" name="True-9-9"></a>
+<a id="True-9-10" name="True-9-10"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">!</span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-11" name="True-9-11"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if !true&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// unreachable code</span>
+<a id="True-9-12" name="True-9-12"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-13" name="True-9-13"></a>
+<a id="True-9-14" name="True-9-14"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">!</span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-15" name="True-9-15"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if !false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// always works code</span>
+<a id="True-9-16" name="True-9-16"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-17" name="True-9-17"></a>
+<a id="True-9-18" name="True-9-18"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-19" name="True-9-19"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if true &amp; false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// unreachable code</span>
+<a id="True-9-20" name="True-9-20"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-21" name="True-9-21"></a>
+<a id="True-9-22" name="True-9-22"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-23" name="True-9-23"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if true &amp; true&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// always works code</span>
+<a id="True-9-24" name="True-9-24"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-25" name="True-9-25"></a>
+<a id="True-9-26" name="True-9-26"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-27" name="True-9-27"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if false &amp; false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// unreachable code</span>
+<a id="True-9-28" name="True-9-28"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-29" name="True-9-29"></a>
+<a id="True-9-30" name="True-9-30"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-31" name="True-9-31"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if true | false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// always works code</span>
+<a id="True-9-32" name="True-9-32"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-33" name="True-9-33"></a>
+<a id="True-9-34" name="True-9-34"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">true</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-35" name="True-9-35"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if true | true&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// always works code</span>
+<a id="True-9-36" name="True-9-36"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-37" name="True-9-37"></a>
+<a id="True-9-38" name="True-9-38"></a><span style="color: #f8f8f2">    </span><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> </span><span style="color: #66d9ef">false</span><span style="color: #f8f8f2"> {</span>
+<a id="True-9-39" name="True-9-39"></a><span style="color: #f8f8f2">        </span><span style="color: #a6e22e">println!</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;if false | false&quot;</span><span style="color: #f8f8f2">); </span><span style="color: #75715e">// unreachable code</span>
+<a id="True-9-40" name="True-9-40"></a><span style="color: #f8f8f2">    }</span>
+<a id="True-9-41" name="True-9-41"></a><span style="color: #f8f8f2">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight" style="background: #272822"><span class="filename">Output</span><pre style="line-height: 125%;"><span></span><code><a id="True-10-1" name="True-10-1" href="#True-10-1"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> true</span>
+<a id="True-10-2" name="True-10-2" href="#True-10-2"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> </span><span style="color: #f92672">!</span><span style="color: #f8f8f2">false</span>
+<a id="True-10-3" name="True-10-3" href="#True-10-3"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> true </span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2"> true</span>
+<a id="True-10-4" name="True-10-4" href="#True-10-4"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> true </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> false</span>
+<a id="True-10-5" name="True-10-5" href="#True-10-5"></a><span style="color: #66d9ef">if</span><span style="color: #f8f8f2"> true </span><span style="color: #f92672">|</span><span style="color: #f8f8f2"> true</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../printing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Printing 🖨 &amp; Formatting 📝" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Printing 🖨 & Formatting 📝
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 python_vs_rust - All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.sections", "navigation.expand", "navigation.instant", "search.suggest", "search.share", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
