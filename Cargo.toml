@@ -12,6 +12,14 @@ name = "hello_world"
 path = "docs/src/hello_world/hello_world.rs"
 
 [[bin]]
+name = "print_out_1"
+path = "docs/src/printing/printing_stdout_1.rs"
+
+[[bin]]
+name = "print_err_1"
+path = "docs/src/printing/printing_stderr_1.rs"
+
+[[bin]]
 name = "boolean"
 path = "docs/src/types/boolean/bool.rs"
 

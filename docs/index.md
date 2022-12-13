@@ -40,7 +40,7 @@ Code inside examples will be written in 2, 3 or 4 blocks, where:
 - "{{py}}" - short Python example;
 - "{{rust}}" - full Rust example (usually declared with `:::rs fn main() {}`), possible to run with 
 `cargo run --bin <bin_name>`;
-- "{{rs}}" - short Rust example (example, probably not possible to compile);
+- "{{rs}}" - short Rust example (example, ^^probably not possible to compile^^);
 
 !!! info "Example with 4 blocks"
     === "{{python}}"

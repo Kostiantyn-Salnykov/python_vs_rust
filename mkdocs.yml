@@ -19,18 +19,18 @@ theme:
   language: "en"
   locale: "en"
   palette:
-    - scheme: "default"
-      primary: "black"
-      accent: "green"
-      toggle:
-        icon: "material/weather-night"
-        name: "Switch to dark mode"
+#    - scheme: "default"
+#      primary: "black"
+#      accent: "green"
+#      toggle:
+#        icon: "material/weather-night"
+#        name: "Switch to dark mode"
     - scheme: "slate"
       primary: "black"
       accent: "green"
-      toggle:
-        icon: "material/weather-sunny"
-        name: "Switch to light mode"
+#      toggle:
+#        icon: "material/weather-sunny"
+#        name: "Switch to light mode"
   font:
     text: "Robot"
     code: "Roboto Mono"
@@ -50,9 +50,10 @@ theme:
 
 nav:
   - Main 🏡: index.md
-  - First Steps 👣: src/first_steps/first_steps.md
-  - Hello World 🌍!: src/hello_world/hello_world.md
-  - Data Types 🗄: src/types/types.md
+  - First Steps 👣: pages/first_steps.md
+  - Hello World 🌍!: pages/hello_world.md
+  - Printing 🖨 & Formatting 📝: pages/printing.md
+  - Data Types 🗄: pages/types.md
 
 plugins:
   - search:
@@ -123,3 +124,5 @@ extra:
   python: "Python 🐍"
   rust: "Rust 🦀"
   button: '{target="_blank" .md-button .md-button--secondary}'
+  link: '{target="_blank"}'
+
