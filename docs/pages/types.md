@@ -81,9 +81,37 @@ This is roughly parallel table for types between {{python}} and {{rust}}.
 
 === "{{python}}"
     ```py
-    --8<-- "docs/src/types/boolean/bool.py"
+    --8<-- "docs/src/types/boolean/bool_1.py"
     ```
+
+    ```{.commandline title="Output" linenums="0"}
+    x=True, y=False
+    ```
+
 === "{{rust}}"
     ```rs
-    --8<-- "docs/src/types/boolean/bool.rs"
+    --8<-- "docs/src/types/boolean/bool_1.rs"
+    ```
+
+    ```{.commandline title="Output" linenums="0"}
+    x=true, y=false
+    ```
+---
+
+=== "{{python}}"
+    ```py
+    --8<-- "docs/src/types/boolean/bool_2.py"
+    ```
+
+    ```{.commandline title="Output" linenums="0"}
+    --8<-- "docs/src/types/boolean/bool_2_py_output.txt"
+    ```
+
+=== "{{rust}}"
+    ```rs
+    --8<-- "docs/src/types/boolean/bool_2.rs"
+    ```
+
+    ```{.commandline title="Output" linenums="0"}
+    --8<-- "docs/src/types/boolean/bool_2_rs_output.txt"
     ```

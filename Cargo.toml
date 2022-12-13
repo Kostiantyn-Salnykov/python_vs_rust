@@ -24,6 +24,9 @@ name = "formatting_1"
 path = "docs/src/printing/formatting_1.rs"
 
 [[bin]]
-name = "boolean"
-path = "docs/src/types/boolean/bool.rs"
+name = "boolean_1"
+path = "docs/src/types/boolean/bool_1.rs"
 
+[[bin]]
+name = "boolean_2"
+path = "docs/src/types/boolean/bool_2.rs"
