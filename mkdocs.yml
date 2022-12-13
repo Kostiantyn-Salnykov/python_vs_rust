@@ -1,4 +1,4 @@
-site_name: "Python VS Rust"
+site_name: "Python🐍 VS Rust🦀"
 site_description: "Documentation and examples that compares code blocks for Python and Rust."
 site_author: "Kostiantyn Salnykov"
 site_dir: "docs_build"
@@ -14,8 +14,8 @@ index_page: "../README.md"
 
 theme:
   name: "material"
-#  logo: ""
-#  favicon: ""
+  logo: "images/rust.svg"
+  favicon: "images/rust.svg"
   language: "en"
   locale: "en"
   palette:
@@ -26,8 +26,8 @@ theme:
 #        icon: "material/weather-night"
 #        name: "Switch to dark mode"
     - scheme: "slate"
-      primary: "black"
-      accent: "green"
+      primary: "indigo"
+      accent: "deep purple"
 #      toggle:
 #        icon: "material/weather-sunny"
 #        name: "Switch to light mode"
