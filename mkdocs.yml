@@ -8,7 +8,7 @@ repo_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"
 repo_name: "Kostiantyn-Salnykov/python_vs_rust"  # name of Git repository
 edit_uri: ""  # disable `edit` button
 remote_branch: "docs"  # gh-deploy branch name
-copyright: "Copyright &copy; 2022 python_vs_rust - All rights reserved."  # Footer at bottom
+copyright: "Copyright &copy; 2023 python_vs_rust - All rights reserved."  # Footer at bottom
 index_page: "../README.md"
 
 
@@ -52,8 +52,8 @@ nav:
   - Main 🏡: index.md
   - First Steps 👣: pages/first_steps.md
   - Hello World 🌍: pages/hello_world.md
-  - Printing 🖨 & Formatting 📝: pages/printing.md
-  - Data Types 🗄: pages/types.md
+  - Printing 🖨️ & Formatting 📝: pages/printing.md
+  - Data Types 🗄️: pages/types.md
 
 plugins:
   - search:
@@ -65,6 +65,22 @@ plugins:
       verbose: true
       on_error_fail: true
       include_dir: "docs"
+  - i18n:
+      default_language: "en"
+      languages:
+        en:
+          name: English
+          build: true
+        uk:
+          name: Ukrainian
+          build: true
+      nav_translations:
+        uk:
+          Main 🏡: Головна 🏡
+          First Steps 👣: Перші кроки 👣
+          Hello World 🌍: Привіт, світ 🌍
+          Printing 🖨️ & Formatting 📝: Друк 🖨️ та форматування 📝
+          Data Types 🗄️: Типи даних 🗄️
 
 markdown_extensions:
   - tables
@@ -125,4 +141,11 @@ extra:
   rust: "Rust 🦀"
   button: '{target="_blank" .md-button .md-button--secondary}'
   link: '{target="_blank"}'
-
+  generator: false
+  alternate:
+    - link: "./"
+      name: "🇺🇸 - English"
+      lang: "en"
+    - link: "./uk/"
+      name: "🇺🇦 - Українська"
+      lang: "uk"

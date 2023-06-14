@@ -1,4 +1,4 @@
-# Data Types 🗄
+# Data Types 🗄️
 
 ## Association Types Table 📖
 
@@ -36,12 +36,27 @@ This is roughly parallel table for types between {{python}} and {{rust}}.
 | datetime.timedelta                               | time.Duration (**rough**)                                           |
 |                                                  | Box&lt;T&gt; (`:::rs Box::new()`)                                   |
 
+## Association Sizes Table 💾
+One of the main features of {{rust}} is working with memory, so I suggest that you familiarize yourself with this table.
+
+!!! tip "Memory management"
+    Also to clarify, {{rust}} stores most of the standard data types **on the stack**, while {{python}} **always uses the heap** for this.
+
+This is roughly parallel table for types sizes between {{python}} and {{rust}} (in bytes).
+
+[//]: # (TODO: TABLE)
+
 
 ## Boolean
 
 ### {{python}}
-
 [Docs](https://docs.python.org/3/library/stdtypes.html#boolean-values){{button}}
+
+In Python bool has different sizes, for `:::py True` it's equal to 28 bytes, for `:::py False` is 24 bytes.
+
+```py
+--8<-- "docs/src/types/boolean/bool_size.py"
+```
 
 !!! warning
     In {{pyt}} Boolean (bool) type are subclass from Integer (int).
@@ -74,10 +89,18 @@ This is roughly parallel table for types between {{python}} and {{rust}}.
         ```
 
 ### {{rust}}
-
 [Docs](https://doc.rust-lang.org/std/primitive.bool.html){{button}}
 
+In Rust `:::rs bool` type always allocate the same size that equal to 1 byte.
+
+```rs
+--8<-- "docs/src/types/boolean/bool_size.rs"
+```
+
+
 ### Examples
+
+#### Declarations
 
 === "{{python}}"
     ```py
@@ -96,7 +119,9 @@ This is roughly parallel table for types between {{python}} and {{rust}}.
     ```{.commandline title="Output" linenums="0"}
     x=true, y=false
     ```
----
+
+#### Conditions
+Boolean conditions works the same in {{python}} and {{rust}}.
 
 === "{{python}}"
     ```py

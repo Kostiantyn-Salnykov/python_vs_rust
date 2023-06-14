@@ -1,9 +1,9 @@
-# Main 🏡
+# Головна 🏡
 
-## {{python}} VS {{rust}}
+## {{python}} проти {{rust}}
 
-This is not a challenge or benchmark comparison, this a simple documentation, that might be helpful for 
-Python Software Engineers that want to learn Rust.
+Це не змагання чи порівняння тестів, це проста документація, яка може бути корисною для Розробники програмного 
+забезпечення на Python, які хочуть вивчити Rust.
 
 ## Description 📑
 
@@ -31,7 +31,7 @@ analyzing code examples and differences and similarities in these programming la
 
 
 
-## Definitions in docs 🗃️
+## Definitions in docs 🗃
 
 Code inside examples will be written in 2, 3 or 4 blocks, where:
 

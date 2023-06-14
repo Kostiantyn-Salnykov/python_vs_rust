@@ -1,9 +1,9 @@
-# Printing 🖨 & Formatting 📝
+# Printing 🖨️ & Formatting 📝
 
 In this section, we will figure out in the printing to **stdout** and **stderr** using built-in 
 functions / macros.
 
-## Printing 🖨
+## Printing 🖨️
 
 ### Standard Output (stdout)
 
