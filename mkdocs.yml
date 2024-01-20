@@ -14,8 +14,10 @@ index_page: "../README.md"
 
 theme:
   name: "material"
-  logo: "images/rust.svg"
-  favicon: "images/rust.svg"
+#  logo: "images/rust.svg"
+#  favicon: "images/rust.svg"
+  logo: "images/rust_python_no_bg.png"
+  favicon: "images/rust_python_no_bg.png"
   language: "en"
   locale: "en"
   palette:
@@ -79,7 +81,7 @@ plugins:
           Main 🏡: Головна 🏡
           First Steps 👣: Перші кроки 👣
           Hello World 🌍: Привіт, світ 🌍
-          Printing 🖨️ & Formatting 📝: Друк 🖨️ та форматування 📝
+          Printing 🖨️ & Formatting 📝: Виведення 🖨️ та форматування 📝
           Data Types 🗄️: Типи даних 🗄️
 
 markdown_extensions:

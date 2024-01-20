@@ -1,48 +1,49 @@
 # Головна 🏡
 
+![Logo](images/rust_python_no_bg.png){width="300" align=right}
 ## {{python}} проти {{rust}}
 
 Це не змагання чи порівняння тестів, це проста документація, яка може бути корисною для Розробники програмного 
 забезпечення на Python, які хочуть вивчити Rust.
 
-## Description 📑
+## Опис 📑
 
-This documentation is designed for developers who know Python 🐍 (like me) in order to gradually understand Rust 🦀 by 
-analyzing code examples and differences and similarities in these programming languages.
+Ця документація призначена для розробників, які знають {{python}} (як я), 
+щоб поступово зрозуміти {{rust}} шляхом аналізу прикладів коду, відмінностей і 
+подібностей в цих мовах програмування.
 
-## Links 🔗
+## Посилання 🔗
 
 === "{{python}}"
-    [Official Site 🐍](https://www.python.org/){{button}}
+    [Офіційний сайт 🐍](https://www.python.org/){{button}}
 
-    [Download Python ⬇️](https://www.python.org/downloads/){{button}}
+    [Завантажити Python ⬇️](https://www.python.org/downloads/){{button}}
 
-    [Python Documentation 🗃️](https://docs.python.org/3/){{button}}
+    [Документація Python 🗃️](https://docs.python.org/3/){{button}}
 
-    [Python Standard Library 🧱](https://docs.python.org/3/library/index.html){{button}}
+    [Стандартна бібліотека Python 🧱](https://docs.python.org/3/library/index.html){{button}}
 === "{{rust}}"
-    [Official Site 🦀](https://www.rust-lang.org/){{button}}
+    [Офіційний сайт 🦀](https://www.rust-lang.org/){{button}}
 
-    [Download Rust ⬇️](https://www.rust-lang.org/tools/install){{button}}
+    [Завантажити Rust ⬇️](https://www.rust-lang.org/tools/install){{button}}
 
-    [Rust Documentation 🗃️](https://www.rust-lang.org/learn){{button}}
+    [Документація Rust 🗃️](https://www.rust-lang.org/learn){{button}}
 
-    [Rust Standard Library 🧱](https://doc.rust-lang.org/std/index.html){{button}}
+    [Стандартна бібліотека Rust 🧱](https://doc.rust-lang.org/std/index.html){{button}}
 
 
 
-## Definitions in docs 🗃
+## Визначення в документації 🗃️
+Код в прикладах буде написаний у 2, 3 або 4 блоки, де:
 
-Code inside examples will be written in 2, 3 or 4 blocks, where:
-
-- "{{python}}" - full Python example (usually declared with `:::py3 if __name__ = "__main__:`), possible to run with 
+- "{{python}}" - повний {{pyt}} приклад (зазвичай декларується з `:::py3 if __name__ = "__main__:`), можливо запустити через 
 `python -m <path.to.module>`;
-- "{{py}}" - short Python example;
-- "{{rust}}" - full Rust example (usually declared with `:::rs fn main() {}`), possible to run with 
+- "{{py}}" - скорочений {{pyt}} приклад;
+- "{{rust}}" - повний {{rst}} приклад (зазвичай декларується з `:::rs fn main() {}`), можливо запистити через 
 `cargo run --bin <bin_name>`;
-- "{{rs}}" - short Rust example (example, ^^probably not possible to compile^^);
+- "{{rs}}" - скорочений {{rst}} приклад (^^ймовірно неможливо скомпілювати^^);
 
-!!! info "Example with 4 blocks"
+!!! info "Приклад з 4 блоками"
     === "{{python}}"
         ```{.python}
         --8<-- "hello_world/hello_world.py"
@@ -60,7 +61,7 @@ Code inside examples will be written in 2, 3 or 4 blocks, where:
         --8<-- "hello_world/hello_world_short.rs"
         ```
 
-!!! info "Example with 2 block"
+!!! info "Приклад з 2 блоками"
     === "{{python}}"
         ```{.python}
         --8<-- "hello_world/hello_world.py"
@@ -70,7 +71,7 @@ Code inside examples will be written in 2, 3 or 4 blocks, where:
         --8<-- "hello_world/hello_world.rs"
         ```
 
-!!! tip "Switch tabs"
-    It's a possible to move tabs (when you click on one tab and it's already active).
+!!! tip "Перемикання владок"
+    Є можливість переміщення вкладок (коли вии натискаєте на одну вкладку, і вона вже активна).
     
-    To move it, use ++left++ or ++right++.
+    Щоб змінити її, використовуйте ++left++ або ++right++.

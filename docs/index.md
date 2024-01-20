@@ -1,5 +1,6 @@
 # Main 🏡
 
+![Logo](images/rust_python_no_bg.png){width="300" align=right}
 ## {{python}} VS {{rust}}
 
 This is not a challenge or benchmark comparison, this a simple documentation, that might be helpful for 
@@ -60,7 +61,7 @@ Code inside examples will be written in 2, 3 or 4 blocks, where:
         --8<-- "hello_world/hello_world_short.rs"
         ```
 
-!!! info "Example with 2 block"
+!!! info "Example with 2 blocks"
     === "{{python}}"
         ```{.python}
         --8<-- "hello_world/hello_world.py"

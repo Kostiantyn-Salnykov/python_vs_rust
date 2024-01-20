@@ -35,3 +35,8 @@ path = "docs/src/types/boolean/bool_2.rs"
 [[bin]]
 name = "boolean_3"
 path = "docs/src/types/boolean/bool_size.rs"
+
+
+[[bin]]
+name = "sizes_1"
+path = "docs/src/types/_sizes/sizes_1.rs"
