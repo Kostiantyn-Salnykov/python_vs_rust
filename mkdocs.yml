@@ -1,46 +1,48 @@
-site_name: "Python🐍 VS Rust🦀"
+site_name: "Python🐍🤝🦀Rust"
 site_description: "Documentation and examples that compares code blocks for Python and Rust."
 site_author: "Kostiantyn Salnykov"
 site_dir: "docs_build"
-site_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"  # logo link
 dev_addr: "localhost:9999"  # local server `HOST:PORT`
 repo_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"
 repo_name: "Kostiantyn-Salnykov/python_vs_rust"  # name of Git repository
 edit_uri: ""  # disable `edit` button
 remote_branch: "docs"  # gh-deploy branch name
-copyright: "Copyright &copy; 2023 python_vs_rust - All rights reserved."  # Footer at bottom
+copyright: "Copyright &copy; 2024 python_vs_rust - All rights reserved.🤣"  # Footer at bottom
 index_page: "../README.md"
 
 
 theme:
   name: "material"
-#  logo: "images/rust.svg"
-#  favicon: "images/rust.svg"
   logo: "images/rust_python_no_bg.png"
   favicon: "images/rust_python_no_bg.png"
+  icon:
+    repo: "fontawesome/brands/github"  # Change icon of repo
+    search: "material/text-box-search"  # Change icon of search
+    alternate: "material/google-translate"  # Change icon of language translation
+    annotation: "material/plus-circle-outline"  # Change icon of code annotations
   language: "en"
   locale: "en"
   palette:
-#    - scheme: "default"
-#      primary: "black"
-#      accent: "green"
-#      toggle:
-#        icon: "material/weather-night"
-#        name: "Switch to dark mode"
+    - scheme: "default"
+      primary: "black"
+      accent: "green"
+      toggle:
+        icon: "fontawesome/solid/lightbulb"
+        name: "Turn OFF"
     - scheme: "slate"
-      primary: "indigo"
-      accent: "deep purple"
-#      toggle:
-#        icon: "material/weather-sunny"
-#        name: "Switch to light mode"
+      primary: "black"
+      accent: "orange"
+      toggle:
+        icon: "fontawesome/regular/lightbulb"
+        name: "Turn ON"
   font:
     text: "Robot"
     code: "Roboto Mono"
   features:
     - navigation.indexes  # remove navigation duplicates (for tabs)
-#    - navigation.top
-#    - navigation.tabs.sticky
+    - navigation.top
 #    - navigation.tabs
+#    - navigation.tabs.sticky
 #    - toc.integrate  # move navigation to the left
     - navigation.sections
     - navigation.expand
@@ -49,6 +51,8 @@ theme:
     - search.share
     - search.highlight
     - content.tabs.link
+    - content.code.annotate  # Use with `# (1)!` or `# (1)` (Python) OR `// (1)!` or `// (1)` (Rust)
+    - content.tooltips
 
 nav:
   - Main 🏡: index.md
@@ -68,21 +72,25 @@ plugins:
       on_error_fail: true
       include_dir: "docs"
   - i18n:
-      default_language: "en"
+      reconfigure_material: true
+      docs_structure: "folder"
+      fallback_to_default: true
       languages:
-        en:
-          name: English
+        - locale: en
+          name: "🇺🇸 - English"
+          default: true
           build: true
-        uk:
-          name: Ukrainian
+          link: "/"
+        - locale: uk
+          name: "🇺🇦 - Українська"
           build: true
-      nav_translations:
-        uk:
-          Main 🏡: Головна 🏡
-          First Steps 👣: Перші кроки 👣
-          Hello World 🌍: Привіт, світ 🌍
-          Printing 🖨️ & Formatting 📝: Виведення 🖨️ та форматування 📝
-          Data Types 🗄️: Типи даних 🗄️
+          link: "/uk/"
+          nav_translations:
+            Main 🏡: Головна 🏡
+            First Steps 👣: Перші кроки 👣
+            Hello World 🌍: Привіт світ 🌍
+            Printing 🖨️ & Formatting 📝: Виведення 🖨️ <br>та форматування 📝
+            Data Types 🗄️: Типи даних 🗄️
 
 markdown_extensions:
   - tables
@@ -121,18 +129,17 @@ markdown_extensions:
       anchor_linenums: true
       line_anchors: true
       linenums_style: table
-      pygments_style: "monokai"
-      noclasses: True
+      pygments_lang_class: true
   - pymdownx.inlinehilite  # Ability to insert code line that highlighted for specified language, e.g. `#!py3 <CODE>` or `:::py3 <CODE>`
   - pymdownx.snippets:
       base_path: [ ".", "docs/src/" ]
       check_paths: true
       auto_append:
-        - "docs/common/abbreviations.md"  # File for all abbreviations
+        - "docs/en/abbreviations.md"  # File for all abbreviations
   - pymdownx.superfences:  # Ability to set HTML & CSS attributes inside code blocks
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
   py: "🐍"
@@ -144,10 +151,3 @@ extra:
   button: '{target="_blank" .md-button .md-button--secondary}'
   link: '{target="_blank"}'
   generator: false
-  alternate:
-    - link: "./"
-      name: "🇺🇸 - English"
-      lang: "en"
-    - link: "./uk/"
-      name: "🇺🇦 - Українська"
-      lang: "uk"

@@ -1,16 +1,16 @@
-# First Steps 👣
+# Перші кроки 👣
 
-In this section described basic steps to start programming with Python or Rust.
+В цьому розділі описано основні кроки для початку програмування на {{pyt}} або {{rst}}.
 
 ## {{python}}
 
-### Installation 🔌
+### Встановлення 🔌
 
 === "Windows"
-    1. Just download `.exe` file;
-    2. Install it;
-    3. Add python executable to `PATH` (should be checkbox option for it);
-    4. Use checkbox to __install for all users__;
+    1. Просто завантажте файл `.exe`;
+    2. Встановіть його;
+    3. Додайте {{pyt}} до системного `PATH` (для нього повинен бути :octicons-checkbox-16:);
+    4. Встановіть :octicons-checkbox-16: для опції "__install for all users__";
 === "Linux"
     1. Download archive;
     2. Extract it;

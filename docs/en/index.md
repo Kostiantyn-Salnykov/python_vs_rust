@@ -1,14 +1,14 @@
 # Main 🏡
 
-![Logo](images/rust_python_no_bg.png){width="300" align=right}
-## {{python}} VS {{rust}}
+![Logo](../images/rust_python_no_bg.png){width="300" align=right}
+## {{python}}🤝{{rs}}{{rst}}
 
 This is not a challenge or benchmark comparison, this a simple documentation, that might be helpful for 
 Python Software Engineers that want to learn Rust.
 
 ## Description 📑
 
-This documentation is designed for developers who know Python 🐍 (like me) in order to gradually understand Rust 🦀 by 
+This documentation is designed for developers who know Python 🐍 (like me) to gradually understand Rust 🦀 by 
 analyzing code examples and differences and similarities in these programming languages.
 
 ## Links 🔗
