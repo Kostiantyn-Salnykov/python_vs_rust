@@ -1,0 +1,844 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and examples that compares code blocks for Python and Rust.">
+      
+      
+        <meta name="author" content="Kostiantyn Salnykov">
+      
+      
+        <link rel="canonical" href="https://ksalnykov.com/python_vs_rust/pages/printing/">
+      
+      
+        <link rel="prev" href="../hello_world/">
+      
+      
+        <link rel="next" href="../types/">
+      
+      
+      <link rel="icon" href="../../images/rust_python_no_bg.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Printing 🖨️ & Formatting 📝 - Python🐍🤝🦀Rust</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m1 5h-2v4H7v2h4v4h2v-4h4v-2h-4V7Z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Robot:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Robot";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#printing-formatting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Python🐍🤝🦀Rust" class="md-header__button md-logo" aria-label="Python🐍🤝🦀Rust" data-md-component="logo">
+      
+  <img src="../../images/rust_python_no_bg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python🐍🤝🦀Rust
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Printing 🖨️ & Formatting 📝
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="green"  aria-label="Turn OFF"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Turn OFF" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2 5.2-7.1 10.4-14.2 15.4-21.4 19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3 5 7.2 10.2 14.3 15.4 21.4 19.8 27.1 39.7 54.4 49.2 86.2h160zm-80 128c44.2 0 80-35.8 80-80v-16H112v16c0 44.2 35.8 80 80 80zm-80-336c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112 8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Turn ON"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Turn ON" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M297.2 248.9c14.4-20.6 22.8-45.7 22.8-72.9 0-70.7-57.3-128-128-128S64 105.3 64 176c0 27.2 8.4 52.3 22.8 72.9 3.7 5.3 8.1 11.3 12.8 17.7 12.9 17.7 28.3 38.9 39.8 59.8 10.4 19 15.7 38.8 18.3 57.5H109c-2.2-12-5.9-23.7-11.8-34.5-9.9-18-22.2-34.9-34.5-51.8-5.2-7.1-10.4-14.2-15.4-21.4C27.6 247.9 16 213.3 16 176 16 78.8 94.8 0 192 0s176 78.8 176 176c0 37.3-11.6 71.9-31.4 100.3-5 7.2-10.2 14.3-15.4 21.4-12.3 16.8-24.6 33.7-34.5 51.8-5.9 10.8-9.6 22.5-11.8 34.5h-48.5c2.6-18.7 7.9-38.6 18.3-57.5 11.5-20.9 26.9-42.1 39.8-59.8 4.7-6.4 9-12.4 12.7-17.7zM192 128c-26.5 0-48 21.5-48 48 0 8.8-7.2 16-16 16s-16-7.2-16-16c0-44.2 35.8-80 80-80 8.8 0 16 7.2 16 16s-7.2 16-16 16zm0 384c-44.2 0-80-35.8-80-80v-16h160v16c0 44.2-35.8 80-80 80z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 5h-9.12L10 2H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h7l1 3h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2M7.17 14.59a4.09 4.09 0 0 1-4.09-4.09 4.09 4.09 0 0 1 4.09-4.09c1.04 0 1.99.37 2.74 1.09l.09.04-1.25 1.18-.06-.05c-.29-.27-.78-.59-1.52-.59-1.31 0-2.38 1.09-2.38 2.42 0 1.33 1.07 2.42 2.38 2.42 1.37 0 1.96-.87 2.12-1.46H7.08V9.91h3.95l.01.09c.04.19.05.38.05.59 0 2.35-1.59 4-3.92 4m6.03-1.71c.33.62.74 1.18 1.19 1.7l-.54.53-.65-2.23m.77-.76H13l-.33-1.04h3.99s-.34 1.31-1.56 2.74c-.52-.62-.89-1.23-1.13-1.7M21 20a1 1 0 0 1-1 1h-7l2-2-.81-2.77.92-.92L17.79 18l.71-.73-2.69-2.68c.9-1.03 1.6-2.25 1.92-3.51H19v-1.04h-3.64V9h-1.04v1.04h-1.96L11.18 6H20a1 1 0 0 1 1 1v13Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇺🇸 - English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../uk/pages/printing/" hreflang="uk" class="md-select__link">
+              🇺🇦 - Українська
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.492 6.492 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2H7m10-6V7H7v2h10Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.492 6.492 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2H7m10-6V7H7v2h10Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Kostiantyn-Salnykov/python_vs_rust" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kostiantyn-Salnykov/python_vs_rust
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python🐍🤝🦀Rust" class="md-nav__button md-logo" aria-label="Python🐍🤝🦀Rust" data-md-component="logo">
+      
+  <img src="../../images/rust_python_no_bg.png" alt="logo">
+
+    </a>
+    Python🐍🤝🦀Rust
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Kostiantyn-Salnykov/python_vs_rust" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Kostiantyn-Salnykov/python_vs_rust
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main 🏡
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first_steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Steps 👣
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hello_world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello World 🌍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Printing 🖨️ & Formatting 📝
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Printing 🖨️ & Formatting 📝
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#printing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing 🖨️
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Printing 🖨️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-output-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Output (stdout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-error-stderr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Error (stderr)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types 🗄️
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#printing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Printing 🖨️
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Printing 🖨️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-output-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Output (stdout)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-error-stderr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Error (stderr)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatting 📝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="printing-formatting">Printing 🖨️ &amp; Formatting 📝<a class="headerlink" href="#printing-formatting" title="Anchor link to this section for reference">⚓</a></h1>
+<p>In this section, we will figure out in the printing to <strong>stdout</strong> and <strong>stderr</strong> using built-in 
+functions / macros.</p>
+<h2 id="printing">Printing 🖨️<a class="headerlink" href="#printing" title="Anchor link to this section for reference">⚓</a></h2>
+<h3 id="standard-output-stdout">Standard Output (stdout)<a class="headerlink" href="#standard-output-stdout" title="Anchor link to this section for reference">⚓</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python 🐍</label><label for="__tabbed_1_2">Rust 🦀</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Python uses the built-in function <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> to write output to <strong>stdout</strong>
+(<a href="https://docs.python.org/3/library/functions.html#print" target="_blank">Docs</a>).</p>
+<p>To remove or change space between objects to print you can provide <code class="language-py highlight"><span class="n">sep</span></code> keyword argument.</p>
+<p>To remove or change new line at the end, you can use <code class="language-py highlight"><span class="n">end</span></code> keyword argument.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-0-1"> 1</a></span>
+<span class="normal"><a href="#True-0-2"> 2</a></span>
+<span class="normal"><a href="#True-0-3"> 3</a></span>
+<span class="normal"><a href="#True-0-4"> 4</a></span>
+<span class="normal"><a href="#True-0-5"> 5</a></span>
+<span class="normal"><a href="#True-0-6"> 6</a></span>
+<span class="normal"><a href="#True-0-7"> 7</a></span>
+<span class="normal"><a href="#True-0-8"> 8</a></span>
+<span class="normal"><a href="#True-0-9"> 9</a></span>
+<span class="normal"><a href="#True-0-10">10</a></span>
+<span class="normal"><a href="#True-0-11">11</a></span>
+<span class="normal"><a href="#True-0-12">12</a></span>
+<span class="normal"><a href="#True-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-0-1" name="True-0-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="True-0-2" name="True-0-2"></a>    <span class="n">value_1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<a id="True-0-3" name="True-0-3"></a>    <span class="n">value_2</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span>
+<a id="True-0-4" name="True-0-4"></a>
+<a id="True-0-5" name="True-0-5"></a>    <span class="c1"># Simple write to stdout,</span>
+<a id="True-0-6" name="True-0-6"></a>    <span class="c1"># with new line, and space between printed objects.</span>
+<a id="True-0-7" name="True-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">)</span>
+<a id="True-0-8" name="True-0-8"></a>
+<a id="True-0-9" name="True-0-9"></a>    <span class="c1"># Write to stdout (change space between objects to &quot;_&quot;).</span>
+<a id="True-0-10" name="True-0-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<a id="True-0-11" name="True-0-11"></a>
+<a id="True-0-12" name="True-0-12"></a>    <span class="c1"># Simple write to stdout (without new line)</span>
+<a id="True-0-13" name="True-0-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>Rust uses build-in macros <code class="language-rs highlight"><span class="fm">println!</span><span class="p">()</span></code> to write output to <strong>stdout</strong>
+(<a href="https://doc.rust-lang.org/std/macro.println.html" target="_blank">Docs</a>).</p>
+<p>To remove or change space between objects to print should do it manually.</p>
+<p>To remove new line at the end, you should use another built-in macro <code class="language-rs highlight"><span class="fm">print!</span></code>
+(<a href="https://doc.rust-lang.org/std/macro.print.html" target="_blank">Docs</a>).</p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-1-1"> 1</a></span>
+<span class="normal"><a href="#True-1-2"> 2</a></span>
+<span class="normal"><a href="#True-1-3"> 3</a></span>
+<span class="normal"><a href="#True-1-4"> 4</a></span>
+<span class="normal"><a href="#True-1-5"> 5</a></span>
+<span class="normal"><a href="#True-1-6"> 6</a></span>
+<span class="normal"><a href="#True-1-7"> 7</a></span>
+<span class="normal"><a href="#True-1-8"> 8</a></span>
+<span class="normal"><a href="#True-1-9"> 9</a></span>
+<span class="normal"><a href="#True-1-10">10</a></span>
+<span class="normal"><a href="#True-1-11">11</a></span>
+<span class="normal"><a href="#True-1-12">12</a></span>
+<span class="normal"><a href="#True-1-13">13</a></span>
+<span class="normal"><a href="#True-1-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-1-1" name="True-1-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="True-1-2" name="True-1-2"></a><span class="w">    </span><span class="c1">// Rust&#39;s compiler automatically determined `&amp;str` type,</span>
+<a id="True-1-3" name="True-1-3"></a><span class="w">    </span><span class="c1">// so no need to declare it.</span>
+<a id="True-1-4" name="True-1-4"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<a id="True-1-5" name="True-1-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
+<a id="True-1-6" name="True-1-6"></a>
+<a id="True-1-7" name="True-1-7"></a><span class="w">    </span><span class="c1">// Simple write to stdout,</span>
+<a id="True-1-8" name="True-1-8"></a><span class="w">    </span><span class="c1">// with new line, and space between printed objects.</span>
+<a id="True-1-9" name="True-1-9"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-1-10" name="True-1-10"></a><span class="w">    </span><span class="c1">// Write to stdout (change space between objects to &quot;_&quot;).</span>
+<a id="True-1-11" name="True-1-11"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}_{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-1-12" name="True-1-12"></a><span class="w">    </span><span class="c1">// Simple write to stdout (without new line).</span>
+<a id="True-1-13" name="True-1-13"></a><span class="w">    </span><span class="fm">print!</span><span class="p">(</span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-1-14" name="True-1-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Output will be: 
+<div class="language-scdoc highlight"><pre><span></span><code><a id="True-2-1" name="True-2-1" href="#True-2-1"></a>Hello World&lt;NEW_LINE&gt;
+<a id="True-2-2" name="True-2-2" href="#True-2-2"></a>Hello_World&lt;NEW_LINE&gt;
+<a id="True-2-3" name="True-2-3" href="#True-2-3"></a>Hello World
+</code></pre></div></p>
+<h3 id="standard-error-stderr">Standard Error (stderr)<a class="headerlink" href="#standard-error-stderr" title="Anchor link to this section for reference">⚓</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python 🐍</label><label for="__tabbed_2_2">Rust 🦀</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>To print something in <strong>stderr</strong> you can modify <code class="language-py highlight"><span class="n">file</span></code> keyword argument to <code class="language-py highlight"><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span></code>.</p>
+<p>To remove or change space between objects to print you can provide <code class="language-py highlight"><span class="n">sep</span></code> keyword argument.</p>
+<p>To remove or change new line at the end, you can use <code class="language-py highlight"><span class="n">end</span></code> keyword argument.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-3-1">1</a></span>
+<span class="normal"><a href="#True-3-2">2</a></span>
+<span class="normal"><a href="#True-3-3">3</a></span>
+<span class="normal"><a href="#True-3-4">4</a></span>
+<span class="normal"><a href="#True-3-5">5</a></span>
+<span class="normal"><a href="#True-3-6">6</a></span>
+<span class="normal"><a href="#True-3-7">7</a></span>
+<span class="normal"><a href="#True-3-8">8</a></span>
+<span class="normal"><a href="#True-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-3-1" name="True-3-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="True-3-2" name="True-3-2"></a>
+<a id="True-3-3" name="True-3-3"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="True-3-4" name="True-3-4"></a>    <span class="n">value_1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<a id="True-3-5" name="True-3-5"></a>    <span class="n">value_2</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span>
+<a id="True-3-6" name="True-3-6"></a>
+<a id="True-3-7" name="True-3-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<a id="True-3-8" name="True-3-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+<a id="True-3-9" name="True-3-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p>To print something in <strong>stderr</strong> you should use another built-in macro <code class="language-rs highlight"><span class="fm">eprintln!</span></code>
+(<a href="https://doc.rust-lang.org/std/macro.eprintln.html" target="_blank">Docs</a>).</p>
+<p>To remove or change space between objects to print should do it manually.</p>
+<p>To remove new line at the end, you should use another built-in macro <code class="language-rs highlight"><span class="fm">eprint!</span></code>
+(<a href="https://doc.rust-lang.org/std/macro.eprint.html" target="_blank">Docs</a>).</p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-4-1">1</a></span>
+<span class="normal"><a href="#True-4-2">2</a></span>
+<span class="normal"><a href="#True-4-3">3</a></span>
+<span class="normal"><a href="#True-4-4">4</a></span>
+<span class="normal"><a href="#True-4-5">5</a></span>
+<span class="normal"><a href="#True-4-6">6</a></span>
+<span class="normal"><a href="#True-4-7">7</a></span>
+<span class="normal"><a href="#True-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-4-1" name="True-4-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="True-4-2" name="True-4-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<a id="True-4-3" name="True-4-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
+<a id="True-4-4" name="True-4-4"></a>
+<a id="True-4-5" name="True-4-5"></a><span class="w">    </span><span class="fm">eprintln!</span><span class="p">(</span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-4-6" name="True-4-6"></a><span class="w">    </span><span class="fm">eprintln!</span><span class="p">(</span><span class="s">&quot;{}_{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-4-7" name="True-4-7"></a><span class="w">    </span><span class="fm">eprint!</span><span class="p">(</span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-4-8" name="True-4-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Output will be: 
+<div class="language-scdoc highlight"><pre><span></span><code><a id="True-5-1" name="True-5-1" href="#True-5-1"></a>Hello World&lt;NEW_LINE&gt;
+<a id="True-5-2" name="True-5-2" href="#True-5-2"></a>Hello_World&lt;NEW_LINE&gt;
+<a id="True-5-3" name="True-5-3" href="#True-5-3"></a>Hello World
+</code></pre></div></p>
+<h3 id="formatting">Formatting 📝<a class="headerlink" href="#formatting" title="Anchor link to this section for reference">⚓</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Python 🐍</label><label for="__tabbed_3_2">Rust 🦀</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In latest Python version the best approach to format strings and data types is <code class="language-text highlight">f-string</code> or formatted string literal (declared with <code class="language-py highlight"><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span></code>)
+(<a href="https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals" target="_blank">f-string docs</a>,
+<a href="https://docs.python.org/3/library/string.html#format-specification-mini-language" target="_blank">.format() docs</a>).</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Basic str interpolation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-6-1"> 1</a></span>
+<span class="normal"><a href="#True-6-2"> 2</a></span>
+<span class="normal"><a href="#True-6-3"> 3</a></span>
+<span class="normal"><a href="#True-6-4"> 4</a></span>
+<span class="normal"><a href="#True-6-5"> 5</a></span>
+<span class="normal"><a href="#True-6-6"> 6</a></span>
+<span class="normal"><a href="#True-6-7"> 7</a></span>
+<span class="normal"><a href="#True-6-8"> 8</a></span>
+<span class="normal"><a href="#True-6-9"> 9</a></span>
+<span class="normal"><a href="#True-6-10">10</a></span>
+<span class="normal"><a href="#True-6-11">11</a></span>
+<span class="normal"><a href="#True-6-12">12</a></span>
+<span class="normal"><a href="#True-6-13">13</a></span>
+<span class="normal"><a href="#True-6-14">14</a></span>
+<span class="normal"><a href="#True-6-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-6-1" name="True-6-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="True-6-2" name="True-6-2"></a>    <span class="n">value_1</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<a id="True-6-3" name="True-6-3"></a>    <span class="n">value_2</span> <span class="o">=</span> <span class="s2">&quot;World&quot;</span>
+<a id="True-6-4" name="True-6-4"></a>
+<a id="True-6-5" name="True-6-5"></a>    <span class="c1"># Use &lt;obj.&gt;__str__() or str(&lt;obj&gt;)</span>
+<a id="True-6-6" name="True-6-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value_1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">value_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># default with f-string</span>
+<a id="True-6-7" name="True-6-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">))</span>  <span class="c1"># with .format() by indexes</span>
+<a id="True-6-8" name="True-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{hello}</span><span class="s2"> </span><span class="si">{world}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hello</span><span class="o">=</span><span class="n">value_1</span><span class="p">,</span> <span class="n">world</span><span class="o">=</span><span class="n">value_2</span><span class="p">))</span>  <span class="c1"># with .format() by names</span>
+<a id="True-6-9" name="True-6-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value_1</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">value_2</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># with names</span>
+<a id="True-6-10" name="True-6-10"></a>    <span class="c1"># Use &lt;obj&gt;.__str__() or str(&lt;obj&gt;)</span>
+<a id="True-6-11" name="True-6-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value_1</span><span class="si">!s}</span><span class="s2"> </span><span class="si">{</span><span class="n">value_2</span><span class="si">!s}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="True-6-12" name="True-6-12"></a>    <span class="c1"># Use &lt;obj&gt;.__repr__() or repr(&lt;obj&gt;)</span>
+<a id="True-6-13" name="True-6-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value_1</span><span class="si">!r}</span><span class="s2"> </span><span class="si">{</span><span class="n">value_2</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="True-6-14" name="True-6-14"></a>    <span class="c1"># Use ascii(&lt;obj&gt;)</span>
+<a id="True-6-15" name="True-6-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value_1</span><span class="si">!a}</span><span class="s2"> </span><span class="si">{</span><span class="n">value_2</span><span class="si">!a}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="language-scdoc highlight"><span class="filename">Output</span><pre><span></span><code><a id="True-7-1" name="True-7-1" href="#True-7-1"></a>Hello World
+<a id="True-7-2" name="True-7-2" href="#True-7-2"></a>Hello World
+<a id="True-7-3" name="True-7-3" href="#True-7-3"></a>Hello World
+<a id="True-7-4" name="True-7-4" href="#True-7-4"></a>value_1=&#39;Hello&#39; value_2=&#39;World&#39;
+<a id="True-7-5" name="True-7-5" href="#True-7-5"></a>Hello World
+<a id="True-7-6" name="True-7-6" href="#True-7-6"></a>&#39;Hello&#39; &#39;World&#39;
+<a id="True-7-7" name="True-7-7" href="#True-7-7"></a>&#39;Hello&#39; &#39;World&#39;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>In Rust standard approach to format string and data types is <code class="language-rust highlight"><span class="n">std</span>::<span class="n">fmt</span></code> or <code class="language-rust highlight"><span class="fm">format!</span></code> macro (declared <code class="language-rust highlight"><span class="s">&quot;{}&quot;</span></code>).</p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Basic str interpolation</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#True-8-1"> 1</a></span>
+<span class="normal"><a href="#True-8-2"> 2</a></span>
+<span class="normal"><a href="#True-8-3"> 3</a></span>
+<span class="normal"><a href="#True-8-4"> 4</a></span>
+<span class="normal"><a href="#True-8-5"> 5</a></span>
+<span class="normal"><a href="#True-8-6"> 6</a></span>
+<span class="normal"><a href="#True-8-7"> 7</a></span>
+<span class="normal"><a href="#True-8-8"> 8</a></span>
+<span class="normal"><a href="#True-8-9"> 9</a></span>
+<span class="normal"><a href="#True-8-10">10</a></span>
+<span class="normal"><a href="#True-8-11">11</a></span>
+<span class="normal"><a href="#True-8-12">12</a></span>
+<span class="normal"><a href="#True-8-13">13</a></span>
+<span class="normal"><a href="#True-8-14">14</a></span>
+<span class="normal"><a href="#True-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="True-8-1" name="True-8-1"></a><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="True-8-2" name="True-8-2"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<a id="True-8-3" name="True-8-3"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
+<a id="True-8-4" name="True-8-4"></a>
+<a id="True-8-5" name="True-8-5"></a><span class="w">    </span><span class="c1">// use Display trait</span>
+<a id="True-8-6" name="True-8-6"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span><span class="w"> </span><span class="c1">// default by placeholders</span>
+<a id="True-8-7" name="True-8-7"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{0} {1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span><span class="w"> </span><span class="c1">// by indexes</span>
+<a id="True-8-8" name="True-8-8"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{hello} {world}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span><span class="w"> </span><span class="c1">// by names</span>
+<a id="True-8-9" name="True-8-9"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;value_1=&#39;{}&#39; value_2=&#39;{}&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span><span class="w"> </span><span class="c1">// custom names manually</span>
+<a id="True-8-10" name="True-8-10"></a>
+<a id="True-8-11" name="True-8-11"></a><span class="w">    </span><span class="c1">// use Debug trait</span>
+<a id="True-8-12" name="True-8-12"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:?} {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-8-13" name="True-8-13"></a><span class="w">    </span><span class="c1">// use Debug and pretty-print</span>
+<a id="True-8-14" name="True-8-14"></a><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{:#?} {:#?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value_1</span><span class="p">,</span><span class="w"> </span><span class="n">value_2</span><span class="p">);</span>
+<a id="True-8-15" name="True-8-15"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="language-scdoc highlight"><span class="filename">Output</span><pre><span></span><code><a id="True-9-1" name="True-9-1" href="#True-9-1"></a>Hello World
+<a id="True-9-2" name="True-9-2" href="#True-9-2"></a>Hello World
+<a id="True-9-3" name="True-9-3" href="#True-9-3"></a>Hello World
+<a id="True-9-4" name="True-9-4" href="#True-9-4"></a>value_1=&#39;Hello&#39; value_2=&#39;World&#39;
+<a id="True-9-5" name="True-9-5" href="#True-9-5"></a>&quot;Hello&quot; &quot;World&quot;
+<a id="True-9-6" name="True-9-6" href="#True-9-6"></a>&quot;Hello&quot; &quot;World&quot;
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 python_vs_rust - All rights reserved.🤣
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.top", "navigation.sections", "navigation.expand", "navigation.instant", "search.suggest", "search.share", "search.highlight", "content.tabs.link", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+    
+  </body>
+</html>

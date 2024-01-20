@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/abbreviations/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/abbreviations/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/abbreviations/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/pages/first_steps/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/first_steps/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/first_steps/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/pages/hello_world/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/hello_world/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/hello_world/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/pages/printing/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/printing/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/printing/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/pages/types/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/types/"/>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/types/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/abbreviations/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/abbreviations/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/abbreviations/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/pages/first_steps/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/first_steps/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/first_steps/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/pages/hello_world/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/hello_world/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/hello_world/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/pages/printing/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/printing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/printing/"/>
+    </url>
+    <url>
+        <loc>https://ksalnykov.com/python_vs_rust/uk/pages/types/</loc>
+        <lastmod>2024-01-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://ksalnykov.com/python_vs_rust/uk/pages/types/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ksalnykov.com/python_vs_rust/pages/types/"/>
+    </url>
+</urlset>
