@@ -2,6 +2,7 @@ site_name: "Python🐍🤝🦀Rust"
 site_description: "Documentation and examples that compares code blocks for Python and Rust."
 site_author: "Kostiantyn Salnykov"
 site_dir: "docs_build"
+site_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"  # logo link
 dev_addr: "localhost:9999"  # local server `HOST:PORT`
 repo_url: "https://github.com/Kostiantyn-Salnykov/python_vs_rust"
 repo_name: "Kostiantyn-Salnykov/python_vs_rust"  # name of Git repository
